@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sana Fathima E | Python Full Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Sana Fathima E, Python Full Stack developer skilled in Django, DRF, MySQL, HTML, CSS and Bootstrap.">
+
+  <!-- Bootstrap 5, Icons, and Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #173d2c;
+      --muted: #64746a;
+      --paper: #f5faf6;
+      --card: #ffffff;
+      --line: #dce9df;
+      --accent: #287454;
+      --accent-dark: #174c38;
+      --code-bg: #173d2c;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--accent-dark);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ffffff26;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      color: #e4f2e8;
+    }
+
+    .nav-link {
+      color: #e4f2e8;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #fff;
+      background: #ffffff1c;
+      border-radius: 6px;
+    }
+
+    .navbar-toggler {
+      border-color: #ffffff80;
+    }
+
+    .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 .2rem rgba(40, 116, 84, .2);
+    }
+
+    /* Buttons */
+    .btn-accent {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      padding: .65rem 1.4rem;
+      border-radius: 8px;
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #fff;
+    }
+
+    .btn-outline-ink {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      font-weight: 600;
+      padding: .65rem 1.4rem;
+      border-radius: 8px;
+    }
+
+    .btn-outline-ink:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .hero .lead {
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .hero-photo {
+      display: block;
+      width: min(100%, 500px);
+      height: 300px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(23, 61, 44, .14);
+      margin-inline: auto;
+    }
+
+    /* Code sample styling */
+    .code-card {
+      background: var(--code-bg);
+      color: #e4f2e8;
+      border-radius: 14px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: .86rem;
+      line-height: 1.7;
+      box-shadow: 0 18px 40px rgba(23, 61, 44, .18);
+      overflow: hidden;
+    }
+
+    .code-card .bar {
+      display: flex;
+      gap: 6px;
+      padding: .8rem 1rem;
+      background: #103323;
+    }
+
+    .code-card .bar span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #50725b;
+    }
+
+    .code-card .file {
+      margin-left: auto;
+      color: #a9c9af;
+      font-size: .78rem;
+    }
+
+    .code-card pre {
+      margin: 0;
+      padding: 1.2rem 1.4rem 1.4rem;
+      color: inherit;
+      overflow-x: auto;
+    }
+
+    .k {
+      color: #9bd4aa;
+    }
+
+    .f {
+      color: #f0d38a;
+    }
+
+    .s {
+      color: #c5e8ca;
+    }
+
+    .c {
+      color: #88a28d;
+    }
+
+    /* Sections */
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-alt {
+      background: #edf5ef;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      margin-bottom: .6rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Skills */
+    .skill-group {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.4rem;
+      height: 100%;
+      background: var(--paper);
+    }
+
+    .skill-group h3 {
+      font-size: 1.05rem;
+      margin-bottom: .9rem;
+    }
+
+    .skill-group h3 i {
+      color: var(--accent);
+      margin-right: .45rem;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: .28rem .8rem;
+      margin: 0 .35rem .5rem 0;
+      border-radius: 999px;
+      background: #e4f2e8;
+      color: var(--accent-dark);
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.6rem;
+      height: 100%;
+      transition: border-color .2s;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+    }
+
+    .project h3 {
+      font-size: 1.2rem;
+    }
+
+    .project p,
+    .project ul {
+      color: var(--muted);
+    }
+
+    .project ul {
+      padding-left: 1.1rem;
+      font-size: .95rem;
+    }
+
+    .project .tags span {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .78rem;
+      color: var(--accent-dark);
+      margin-right: .8rem;
+    }
+
+    /* Experience */
+    .exp-item {
+      position: relative;
+      border-left: 3px solid var(--accent);
+      padding: 0 0 1.8rem 1.4rem;
+    }
+
+    .exp-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .exp-item::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: .35rem;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--paper);
+    }
+
+    .exp-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: .1rem;
+    }
+
+    .exp-item .org {
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .exp-item .period {
+      display: inline-block;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    .exp-item ul {
+      color: var(--muted);
+      padding-left: 1.1rem;
+      font-size: .95rem;
+      margin: 0;
+    }
+
+    /* Certifications */
+    .cert-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.3rem;
+      height: 100%;
+      transition: border-color .2s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--accent);
+    }
+
+    .cert-card .cert-icon {
+      font-size: 1.6rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .cert-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: .15rem;
+    }
+
+    .cert-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* Education */
+    .edu {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.2rem;
+    }
+
+    .edu h3 {
+      font-size: 1.1rem;
+      margin-bottom: .1rem;
+    }
+
+    .edu p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding: .9rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: .8rem;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .contact-link i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 1.6rem 0;
+      color: var(--muted);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Sana Fathima.E</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="container pt-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <p class="mb-2 fw-semibold text-success">Python Full Stack Developer Intern, Kozhikode, Kerala</p>
+          <h1>I'm Sana</h1>
+          <p class="lead mt-3 mb-4">
+            A BCA graduate working with Python, Django and REST APIs.
+            I'm looking for my first role in Web development.
+          </p>
+          <a href="#projects" class="btn btn-accent me-2 mb-2">View projects</a>
+          <a href="#contact" class="btn btn-outline-ink mb-2">Contact me</a>
+        </div>
+
+        <div class="col-lg-6 d-flex justify-content-end justify-content-center">
+          <img src="professional.jpeg" alt="Sana Fathima E" class="rounded-circle" style="width: 300px; height: 300px;">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section-alt">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="section-title">About me</h2>
+        </div>
+        <div class="col-lg-7">
+          <p>
+            My name is Sana Fathima, and I am from Calicut. I am a degree
+            graduated student and currently pursuing training in Python Full
+            Stack Development and React.js at Luminar Technolab. I have
+            completed training in Django REST Framework and MySQL, and I have
+            technical knowledge of HTML, CSS, Bootstrap, JavaScript, SQL Server,
+            and other related technologies.
+          </p>
+          <p>
+            I am eager to learn new programming languages and technologies,
+            and I enjoy developing and implementing practical projects. I am
+            committed to continuously improving my skills and growing as a
+            Web developer.
+          </p>
+          <p class="mb-0">
+            My recent work is a Protrack-project monitoring application and library management system
+            both written with Django and other technologies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title"> My Skills</h2>
+      <p class="section-sub">The tools I use to build and ship projects.</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="skill-group">
+            <h3><i class="bi bi-braces"></i>Backend</h3>
+            <span class="chip">Python</span>
+            <span class="chip">Django</span>
+            <span class="chip">Django REST Framework</span>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="skill-group">
+            <h3><i class="bi bi-window"></i>Frontend</h3>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">JavaScript (Currently learning)</span>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="skill-group">
+            <h3><i class="bi bi-database"></i>Database &amp; Tools</h3>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section-alt">
+    <div class="container">
+      <h2 class="section-title"> My Projects</h2>
+      <p class="section-sub">Backend and frontend focused projects built with Django.</p>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <article class="project">
+            <h3>ProTrack--Project Monitoring Application</h3>
+            <p>A user-friendly application for managing and monitoring project activities.</p>
+            <ul>
+              <li>Organizes project-related activities in one application</li>
+              <li>Built with Python, Django, and MySQL, with web and Flutter technologies</li>
+            </ul>
+            <div class="tags mb-3">
+              <span>Python</span>
+              <span>Django</span>
+              <span>MySQL</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+              <span>JavaScript</span>
+              <span>Flutter(Dart)</span>
+            </div>
+          </article>
+        </div>
+
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="project">
+              <h3>Expense Tracker</h3>
+              <p>A personal expense tracking project designed to help manage and monitor expenses</p>
+              <ul>
+                <li>Add, edit, view and delete expenses (CRUD operations)</li>
+                <li>Categorize expenses such as Food, Travel and Bills</li>
+                <li>Filter expenses by date and category</li>
+              </ul>
+              <div class="tags mb-3">
+                <span>Python</span>
+                <span>Django</span>
+                <span>DRF</span>
+              </div>
+                <a href="https://github.com/sanafathimapy/expense-tracker.git" class="btn btn-outline-ink btn-sm"
+                  target="_blank" rel="noopener">
+                  <i class="bi bi-github me-1"></i>Source code
+                </a>
+            </article>
+          </div>
+
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <article class="project">
+                <h3>Library Management System</h3>
+                <p>A REST API to manage books, members and borrowing records.</p>
+                <ul>
+                  <li>Book CRUD with serializers and generic views</li>
+                  <li>Member and borrow record models</li>
+                  <!-- <li>Tested with Postman</li> -->
+                </ul>
+                <div class="tags mb-3">
+                  <span>Python</span>
+                  <span>Django</span>
+                  <span>DRF</span>
+                </div>
+                <a href="https://github.com/sanafathimapy/library-book-management-system.git"
+                  class="btn btn-outline-ink btn-sm" target="_blank" rel="noopener">
+                  <i class="bi bi-github me-1"></i>Source code
+                </a>
+              </article>
+            </div>
+
+            <!-- <div class="col-md-6">
+          <article class="project">
+            <h3>Event Management API</h3>
+            <p>A backend service to create events, manage bookings and track attendance.</p>
+            <ul>
+              <li>Modular apps for events, users and bookings</li>
+              <li>Validation and clear error responses</li>
+              <li>Relational schema in MySQL</li>
+            </ul>
+            <div class="tags mb-3">
+              <span>Python</span>
+              <span>DRF</span>
+              <span>MySQL</span>
+            </div>
+            <a
+              href="https://github.com/your-username/event-api"
+              class="btn btn-outline-ink btn-sm"
+              target="_blank"
+              rel="noopener">
+              <i class="bi bi-github me-1"></i>Source code
+            </a>
+          </article>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">Hands-on training and internship experience.</p>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="exp-item">
+            <h3>Python Full Stack Developer Intern</h3>
+            <p class="org">Luminar Technolab, Calicut</p>
+            <span class="period">2026 – Present</span>
+            <ul>
+              <li>Building web applications using Python, Django and MySQL</li>
+              <li>Developed REST APIs with Django REST Framework</li>
+              <li>Learning React.js,HTML,CSS,Bootstrap and JavaScript for frontend development</li>
+            </ul>
+          </div>
+
+          <!-- ഇനിയൊരു experience ഉണ്ടെങ്കിൽ ഈ block copy ചെയ്യുക -->
+          <!--
+        <div class="exp-item">
+          <h3>Job Title</h3>
+          <p class="org">Company Name</p>
+          <span class="period">Month Year – Month Year</span>
+          <ul>
+            <li>What you did</li>
+          </ul>
+        </div>
+        -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section-alt">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-sub">Courses and certificates I have completed.</p>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="cert-card">
+            <i class="bi bi-patch-check cert-icon"></i>
+            <div>
+              <h3>Certificate Course in SQL Server</h3>
+              <p class="text-success">G-Tech Computer Education</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="cert-card">
+            <i class="bi bi-patch-check cert-icon"></i>
+            <div>
+              <h3>Competition Certificate in One day Industrial Visit</h3>
+              <p class="text-success">Doctosmart Edtech</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- കൂടുതൽ certificates-ന് ഈ block copy ചെയ്യുക -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <div class="edu">
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p>St.xavier's arts and science college Eranjipalam</p>
+            <span class="fw-bold text-success">2023-2026</span>
+          </div>
+        </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="section-title">Contact</h2>
+          <p class="text-secondary">
+            I'm open to fresher roles in software and backend development.
+            Send me a message and I'll reply soon.
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <a class="contact-link" href="mailto:sanafathimae31@gmail.com">
+            <i class="bi bi-envelope"></i>Email:sanafathimae31@gmail.com
+          </a>
+          <a class="contact-link" href="contact-to:8848121404">
+            <i class="bi bi-telephone"></i>Phone:8848121404
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/Sana-Fathima E" target="_blank" rel="noopener">
+            <i class="bi bi-linkedin"></i>linkedin
+          </a>
+          <a class="contact-link" href="https://github.com/sanafathimapy" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i>github
+          </a>
+          <!-- <a class="contact-link" href="http://127.0.0.1:5500/personal/index.html" target="_blank" rel="noopener">
+            <i class="bi bi-globe"></i> My website
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Sana Fathima E</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
